@@ -42,24 +42,29 @@ a:active {
 
 
 /* --- Cabeçalho --- */
-#cabecalho {
+header {
   background-color: rgba(0, 0, 0, .95);
   box-shadow: 2px 10px 10px rgba(0,0,0, .25);
   padding-top: 1em;
   text-align: center;
 }
 
-#cabecalho ul {
+header ul {
   background-color: rgba(0, 204, 147, 0.53);
 }
 
-#cabecalho a {
+header a {
   text-decoration: none;
   text-shadow: 1px 1px black;
 }
 
-#menu-de-navegacao ul {
+nav ul {
   margin-bottom: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
@@ -72,8 +77,6 @@ a:active {
 }
 
 
-
-
 /* --- Principal >> Postagens principais --- */
 #posts-principais {
   padding-top: 1.5em;
@@ -83,7 +86,7 @@ a:active {
   margin-bottom: 1em;
 }
 
-#posts-principais .post {
+#posts-principais article {
   width: 40%;
   max-width: 400px;
   margin-left: 2.5%;
@@ -91,11 +94,22 @@ a:active {
   display: inline-block;
 }
 
-#posts-principais .post .titulo {
+#posts-principais article .titulo {
   text-shadow: 1px 1px black;
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  transition: all 150ms ease;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: default;
 }
 
-#posts-principais .post img {
+#posts-principais article .titulo:hover {
+  top: 6px;
+  opacity: 1;
+}
+
+#posts-principais article img {
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
@@ -112,12 +126,12 @@ a:active {
   margin-bottom: 1em;
 }
 
-#ultimas-postagens .post {
+#ultimas-postagens article {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-#ultimas-postagens .post .data-horario {
+#ultimas-postagens article .data-horario {
   background-color: white;
   color: #333;
   border: 1px solid black;
@@ -133,13 +147,24 @@ a:active {
   display: inline-block;
 }
 
-
+.novidade::before{
+  content: "Novidade!";
+  display: inline-block;
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 3px;
+  display: inline-block;
+  margin-right: 1em;
+}
 
 
 /* --- Principal >> Nuvem de tags --- */
 #tags {
+  position: sticky;
   float: right;
   width: 300px;
+  box-sizing: border-box;
   padding: 15px;
   background-color: black;
   background-image: url(imgs/mula.webp);
@@ -166,6 +191,15 @@ a:active {
   text-shadow: 1px 1px black;
 }
 
+.tag-1:active,
+.tag-2:active,
+.tag-3:active {
+  position: relative;
+  top: -2px;
+  left: -2px;
+  cursor: pointer;
+}
+
 .tag-2 {
   font-size: 125%;
 }
@@ -175,17 +209,44 @@ a:active {
 }
 
 
+/* --- Principal >> Boos --- */
+.boo {
+  position: fixed;
+  width: 40px;
+  opacity: 0.1;
+  transition: opacity 150ms;
+}
+
+.boo:hover {
+  opacity: 1;
+}
+
+#boo-1.boo {
+  top: 80%;
+  right: 10%;
+  transform: scaleX(-1);
+}
+
+#boo-2.boo {
+  top: 75%;
+  right: 90%;
+}
+
+#boo-3.boo {
+  top: 15%;
+  right: 30%;
+}
 
 
 
 /* --- Rodapé --- */
-#rodape {
+footer {
   background-color: rgba(0, 0, 0, .7);
   padding: 1em;
   display: flex;
 }
 
-#rodape .logo-rodape {
+footer .logo-rodape {
   margin-right: 2em;
 }
 
