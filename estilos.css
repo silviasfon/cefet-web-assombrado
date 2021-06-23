@@ -163,6 +163,7 @@ nav ul {
 /* --- Principal >> Nuvem de tags --- */
 #tags {
   position: sticky;
+  top: 0;
   float: right;
   width: 300px;
   box-sizing: border-box;
