@@ -92,6 +92,7 @@ nav ul {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais article .titulo {
